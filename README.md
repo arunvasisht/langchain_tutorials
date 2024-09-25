@@ -23,6 +23,9 @@ Objectives:
 
 ## Resources
 
+Inspired by : LangChain Master Class for Beginners
+https://youtu.be/yF9kGESAi3M?si=uS3YzsMdLiApIekO
+
 Chat Models
 - https://python.langchain.com/v0.2/docs/integrations/chat/
 
