@@ -38,18 +38,21 @@ prompt_negative = ChatPromptTemplate.from_messages(
         ("human","generate a apology message for the positive feedback given by the user : {user_input}. You should also ask the user for further details.")
     ]
 )
+chain_positive = prompt_positive | llm | StrOutputParser()
+chain_neutral = prompt_neutral | llm | StrOutputParser()
+chain_negative = prompt_negative | llm | StrOutputParser()
 
 branches = RunnableBranch(
-    (lambda x : "Positive" in x, prompt_positive | llm | StrOutputParser()),
-    (lambda x : "Negative" in x, prompt_negative | llm | StrOutputParser()),
-    prompt_neutral | llm | StrOutputParser()
+    (lambda x : "Positive" in x, chain_positive),
+    (lambda x : "Negative" in x, chain_negative),
+    chain_neutral
 )
 
 
 chain = classification_chain | branches
 
 respoonse = chain.invoke({
-    "user_input":"This product is OK. Can do better."
+    "user_input":"This product is great."
 })
 
 print(respoonse)
