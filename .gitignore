@@ -1,3 +1,5 @@
 .ipynb_checkpoints
 .env
 notebooks
+05_agents_and_tools/.ipynb_checkpoints
+05_agents_and_tools/*.ipynb

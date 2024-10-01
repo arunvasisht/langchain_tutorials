@@ -1,5 +1,4 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableLambda, RunnableSequence
@@ -16,6 +15,8 @@ messages = [
 ]
 
 prompt_template = ChatPromptTemplate.from_messages(messages)
+
+print(prompt_template.format_prompt(topic="cat",n=100))
 
 def do_uppercase(story):
     print(story)
