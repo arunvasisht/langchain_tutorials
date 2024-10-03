@@ -19,7 +19,15 @@ Objectives:
 
 ### Prerequisites
  - Python 3.10 or 3.11
+ - git
 
+### Setup
+
+1. Checkout the code from the repository `https://github.com/arunvasisht/langchain_tutorials.git`
+2. Create a new virtual environment
+3. Point to the checked out code repository.
+4. Install the dependencies by running the command `pip install -r 'requirements.txt'`
+5. Done!
 
 ## Resources
 
